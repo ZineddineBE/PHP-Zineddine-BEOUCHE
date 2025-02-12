@@ -17,7 +17,7 @@ Si c’est mercredi, tous les clients VIP ont 5% de réduction supplémentaire. 
     $total = 0;
     $statut = "";
     $nb_commande = 15;
-    $montant = 350;
+    $montant = 2500;
     $jour = "mercredi";
 
     switch($nb_commande){
@@ -36,9 +36,7 @@ Si c’est mercredi, tous les clients VIP ont 5% de réduction supplémentaire. 
         $reduction_montant = 0.05;
     }
 
-    if (strtolower($jour) == "mercredi"){
-        $reduction_jour = 0.05;
-    }
+    
     
     switch($statut){
         case "Nouveau client":
@@ -50,6 +48,9 @@ Si c’est mercredi, tous les clients VIP ont 5% de réduction supplémentaire. 
             $total = $montant * $reduction;
             break;
         case "VIP":
+            if (strtolower($jour) == "mercredi"){
+                $reduction_jour = 0.05;
+            }
             $reduction = 0.90 - $reduction_montant - $reduction_jour;
             $total = $montant * $reduction;
             break;
@@ -62,7 +63,7 @@ Si c’est mercredi, tous les clients VIP ont 5% de réduction supplémentaire. 
 
     echo "<br>";
 
-    echo "Montant total de la commande : ".$total;
+    echo "Montant total de la commande : ".$total. "€";
 
 
     
