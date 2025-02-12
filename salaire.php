@@ -15,24 +15,30 @@
 // Pour chaque jour d’absence injustifiée, -50€ sont déduits.
 
 // Variables
-$salaire = 2458;
+$poste = "Développeur";
 $anciennete = 7;
 $heure_supplementaire = 8;
 $jours_absences_injustifiees = 2;
 
-// Détermination du poste de l'employé
-switch($salaire){
-    case $salaire <= 1200:
-        $poste = "Stagiaire";
+// Détermination de la paye supplémentaire en fonction des heures supplémentaires
+$paye_supplementaire = $heure_supplementaire * 25;
+    
+// Détermination de la paye retirée en fonction des absences injustifiées
+$paye_retiree = $jours_absences_injustifiees * 50;
+
+// Détermination du salaire en fonction du poste de l'employé
+switch($poste){
+    case "Stagiaire":
+        $salaire = 1200;
         break;
-    case $salaire <= 2800:
-        $poste = "Designer";
+    case "Designer":
+        $salaire = 2800;
         break;
-    case $salaire <= 3000:
-        $poste = "Développeur";
+    case "Développeur":
+        $salaire = 3000;
         break;
-    case $salaire <= 4000:
-        $poste = "Manager";
+    case "Manager":
+        $salaire = 4000;
         break;
 }
 
@@ -42,12 +48,6 @@ if ($anciennete >=10) {
 } else{
     $prime = 1.20;
 }
-
-// Détermination de la paye supplémentaire en fonction des heures supplémentaires
-$paye_supplementaire = $heure_supplementaire * 25;
-    
-// Détermination de la paye retirée en fonction des absences injustifiées
-$paye_retiree = $jours_absences_injustifiees * 50;
 
 $salaire_total = ($salaire*$prime) + $paye_supplementaire - $paye_retiree;
 
