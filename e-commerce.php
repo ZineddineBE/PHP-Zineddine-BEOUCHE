@@ -11,59 +11,82 @@ Si c’est mercredi, tous les clients VIP ont 5% de réduction supplémentaire. 
 
 <?php
 
-    $reduction = 0;
-    $reduction_jour = 0;
-    $reduction_montant = 0;
-    $total = 0;
-    $statut = "";
     $nb_commande = 15;
-    $montant = 2500;
-    $jour = "mercredi";
+    $montant_commande = 2500;
+    $total_depense = 1250;
+    $jour = "Mercredi";
 
-    switch($nb_commande){
-        case $nb_commande >= 10 && $montant >= 1000:
-            $statut = "VIP";
-            break;
-        case $nb_commande >= 5:
-            $statut = "Régulier";
-            break;
-        default:
-            $statut = "Nouveau client";
-            break;
-    }
-
-    if ($montant > 200){
+    if ($montant_commande > 200){
         $reduction_montant = 0.05;
     }
 
-    
-    
-    switch($statut){
-        case "Nouveau client":
-            $reduction = 0;
-            $total = $montant;
-            break;
-        case "Régulier":
-            $reduction = 0.95 - $reduction_montant - $reduction_jour;
-            $total = $montant * $reduction;
-            break;
-        case "VIP":
-            if (strtolower($jour) == "mercredi"){
+    switch($nb_commande){
+        case $nb_commande >= 10 && $total_depense >= 1000:
+            $statut = "VIP";
+            if ($jour == "Mercredi"){
                 $reduction_jour = 0.05;
             }
             $reduction = 0.90 - $reduction_montant - $reduction_jour;
-            $total = $montant * $reduction;
+            $total = $montant_commande * $reduction;
+            break;
+        case $nb_commande >= 5:
+            $statut = "Régulier";
+            $reduction = 0.95 - $reduction_montant;
+            $total = $montant_commande * $reduction;
+            break;
+        default:
+            $statut = "Nouveau client";
+            $reduction = 0;
+            $total = $montant_commande;
             break;
     }
 
     echo "Statut : ".$statut."<br>";
     echo "Réduction montant : ".$reduction_montant."<br>";
-    echo "Réduction jour : ".$reduction_jour."<br>";
+
+    if ($statut == "VIP"){
+        echo "Réduction jour (reservée au VIP): ".$reduction_jour."<br>";
+    }
     echo "Réduction total : ".$reduction."<br>";
 
     echo "<br>";
 
-    echo "Montant total de la commande : ".$total. "€";
+    echo "Montant total de la commande : ".number_format($total, 2). "€";
 
 
+// --------------------------------------- CORRECTION ----------------------------------------------
     
+
+//     // Variables$nbCommandes = 12;
+//     $totalDepense = 1500;
+//     $montantCommande = 250;
+//     $jour = "mercredi";
+    
+//     // Détermination du statut du client
+//     if ($nbCommandes >= 10 && $totalDepense > 1000) {
+//     $statut = "VIP";
+//     $reduction = 10;
+//     } elseif ($nbCommandes >= 5) {
+//     $statut = "Régulier";
+//     $reduction = 5;
+//     } else {
+//     $statut = "Nouveau client";
+//     $reduction = 0;
+//     }
+    
+//     // Réduction supplémentaire si la commande dépasse 200€
+//     if ($montantCommande > 200) {
+//     $reduction += 5;
+//     }
+    
+//     // Réduction spéciale le mercredi pour les VIP
+//     if ($statut === "VIP" && $jour === "mercredi") {
+//     $reduction += 5;
+//     }
+    
+//     // Calcul du montant final
+//     $montantFinal = $montantCommande - ($montantCommande * $reduction / 100);
+    
+//     // Affichage du résultatecho "Statut du client : $statut <br>";
+//     echo "Réduction appliquée : $reduction <br>";
+//     echo "Montant final à payer : " . number_format($montantFinal, 2) . "€ <br>";
