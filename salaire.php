@@ -15,10 +15,10 @@
 // Pour chaque jour d’absence injustifiée, -50€ sont déduits.
 
 // Variables
-$poste = "Développeur";
-$anciennete = 7;
-$heure_supplementaire = 8;
-$jours_absences_injustifiees = 2;
+$poste = "Manager";
+$anciennete = 15;
+$heure_supplementaire = 14;
+$jours_absences_injustifiees = 1;
 
 // Détermination de la paye supplémentaire en fonction des heures supplémentaires
 $paye_supplementaire = $heure_supplementaire * 25;
@@ -44,9 +44,9 @@ switch($poste){
 
 // Détermination de la prime de l'employé
 if ($anciennete >=10) {
-    $prime = 1.10;
-} else{
     $prime = 1.20;
+} else{
+    $prime = 1.10;
 }
 
 $salaire_total = ($salaire*$prime) + $paye_supplementaire - $paye_retiree;
