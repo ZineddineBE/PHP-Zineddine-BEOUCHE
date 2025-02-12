@@ -16,7 +16,7 @@
 
 // Variables
 $poste = "Manager";
-$anciennete = 15;
+$anciennete = 12;
 $heure_supplementaire = 14;
 $jours_absences_injustifiees = 1;
 
@@ -45,9 +45,13 @@ switch($poste){
 // Détermination de la prime de l'employé
 if ($anciennete >=10) {
     $prime = 1.20;
-} else{
+} elseif ($anciennete >=5){
     $prime = 1.10;
+} else {
+    $prime = 1;
 }
+
+// Détermination de la prime de l'employé
 
 $salaire_total = ($salaire*$prime) + $paye_supplementaire - $paye_retiree;
 
