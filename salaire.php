@@ -40,6 +40,9 @@ switch($poste){
     case "Manager":
         $salaire = 4000;
         break;
+    default:
+        echo "Poste inconnu";
+        exit;
 }
 
 // Détermination de la prime de l'employé
@@ -52,7 +55,6 @@ if ($anciennete >=10) {
 }
 
 // Détermination de la prime de l'employé
-
 $salaire_total = ($salaire*$prime) + $paye_supplementaire - $paye_retiree;
 
 echo "Poste de l'employé : $poste <br>";

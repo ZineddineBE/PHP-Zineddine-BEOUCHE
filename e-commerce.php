@@ -57,7 +57,8 @@ Si c’est mercredi, tous les clients VIP ont 5% de réduction supplémentaire. 
 // --------------------------------------- CORRECTION ----------------------------------------------
     
 
-//     // Variables$nbCommandes = 12;
+//     // Variables
+//     $nbCommandes = 12;
 //     $totalDepense = 1500;
 //     $montantCommande = 250;
 //     $jour = "mercredi";
@@ -87,6 +88,7 @@ Si c’est mercredi, tous les clients VIP ont 5% de réduction supplémentaire. 
 //     // Calcul du montant final
 //     $montantFinal = $montantCommande - ($montantCommande * $reduction / 100);
     
-//     // Affichage du résultatecho "Statut du client : $statut <br>";
+//     // Affichage du résultat
+//     echo "Statut du client : $statut <br>";
 //     echo "Réduction appliquée : $reduction <br>";
 //     echo "Montant final à payer : " . number_format($montantFinal, 2) . "€ <br>";
