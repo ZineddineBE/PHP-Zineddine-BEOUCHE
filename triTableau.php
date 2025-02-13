@@ -56,29 +56,18 @@
             ["marque" => "Lamborghini", "modele" => "Huracán STO", "couleur" => "Vert", "prix" => 320000.0]
         ];
 
-        $carsSorted = [];
-
-        foreach ($cars as $car) {
-            $temp = [];
-            $added = false;
-
-            foreach ($carsSorted as $sortedCar) {
-                if (!$added && $car["prix"] < $sortedCar["prix"]) {
-                    $temp[] = $car;
-                    $added = true;
-                }
-                $temp[] = $sortedCar;
+        for ($i = 0; $i < count($cars); $i++) {
+            for ($j = $i + 1; $j < count($cars); $j++) {
+                if ($cars[$i]["prix"] > $cars[$j]["prix"]) {
+                    $temp = $cars[$i];
+                    $cars[$i] = $cars[$j];
+                    $cars[$j] = $temp;
+                }   
             }
-
-            if (!$added) {
-                $temp[] = $car;
-            }
-
-            $carsSorted = $temp;
         }
 
         $somme_prix = 0;
-        foreach ($carsSorted as $car){
+        foreach ($cars as $car){
             echo "<tr>
                     <th scope='row'>".$car["marque"]."</th>
                     <td>".$car["modele"]."</td>
