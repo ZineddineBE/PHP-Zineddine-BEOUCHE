@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: url("../uploads/zephyr.webp");
+}
+
+h1 {
+    background-color: #1a237e;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Formulaire */
+form {
+    background: white;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels et légendes */
+label, legend {
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Champs de formulaire */
+input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Effet focus sur les champs */
+input:focus {
+    border-color: #1a237e;
+    box-shadow: 0 0 5px rgba(26, 35, 126, 0.3);
+    outline: none;
+}
+
+/* Input "Nombre de personnes" réduit de 70% et aligné à gauche */
+input[name="nombresPersonnes"] {
+    width: 30%;
+    text-align: left;
+    margin-left: 0; /* Supprime tout centrage */
+}
+
+/* Bouton */
+button {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+    width: 100%;
+    padding: 10px;
+}
+
+/* Effet hover */
+button:hover {
+    background-color: #0d1b57;
+}
+
+/* Fieldset */
+fieldset {
+    border: none;
+    margin-top: 15px;
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+/* Pied de page */
+footer {
+    position: fixed; /* Fixe le footer en bas de l'écran */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Assure qu'il occupe toute la largeur */
+    background: #1a237e;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 15px 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
