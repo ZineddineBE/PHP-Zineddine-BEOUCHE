@@ -1,0 +1,78 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Titre principal */
+h1 {
+    background-color: #1a237e;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Conteneur des réservations */
+h2 {
+    color: #1a237e;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+/* Informations de réservation */
+p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Options */
+h3 {
+    color: #1a237e;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* Liste des options */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #1a237e;
+    color: white;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+/* Montants en gras et visibles */
+p strong {
+    font-size: 18px;
+    color: #d32f2f;
+}
+
+/* Ligne de séparation améliorée */
+hr {
+    border: 0;
+    height: 2px;
+    background-color: #1a237e;
+    width: 60%;
+    margin: 30px auto;
+}
+
+/* Pied de page */
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    background: #1a237e;
+    color: white;
+    font-size: 14px;
+}
