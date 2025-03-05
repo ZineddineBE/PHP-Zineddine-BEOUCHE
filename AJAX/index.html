@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+    <span>Bonjour<strong id="name"></strong></span>
+    <br>
+    <br>
+    <button id="test">Réponse AJAX</button>
+
+    <script>
+        document.getElementById("test").addEventListener("click", (event)=>{
+            fetch("page.php")
+            .then(response=>response.text())// se déclenche quand le fetch est terminé
+            .then(data=>{
+                document.getElementById("name").innerText = " " + data + " !";
+            })
+            .finally(
+                event.target.disabled = true
+            )
+            .catch(
+                error => console.error("Erreur lors du fetch :", error));
+        });
+
+        // OU
+
+        // document.getElementById("test").addEventListener("click", (event)=>{
+        //     fetch("page.php")
+        //     .then(function(response){ // se déclenche quand le fetch est terminé
+        //         return response.text();
+        //     })
+        //     .then(function(data){
+        //         document.getElementById("name").innerText = " " + data + " !";
+        //     })
+        //     .finally(
+        //         event.target.disabled = true
+        //     ).catch(
+        //         error => console.error("Erreur lors du fetch :", error));
+        // });
+    </script>
+    
+</body>
+</html>
